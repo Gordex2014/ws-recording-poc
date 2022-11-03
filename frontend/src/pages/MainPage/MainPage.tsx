@@ -16,14 +16,16 @@ export const MainPage = () => {
     isRecording: isCameraRecording,
     startRecording: startCameraRecording,
     stopRecording: stopCameraRecording,
-  } = useRecording("audio/video", "JohnDoe");
+    sourceMedia: cameraSourceMedia,
+  } = useRecording("audio/video", userName);
 
   const {
     askPermission: askScreenPermission,
     isRecording: isScreenRecording,
     startRecording: startScreenRecording,
     stopRecording: stopScreenRecording,
-  } = useRecording("screen", "JohnDoeScreen");
+    sourceMedia: screenSourceMedia,
+  } = useRecording("screen", `${userName}-screen`);
 
   const handleAskPermissions = async () => {
     askCameraPermission();
@@ -45,12 +47,12 @@ export const MainPage = () => {
       <h1 className={styles.title}>{userName}</h1>
       <div className={styles.videoContainer}>
         <div className={styles.videoBlock}>
-          <VideoPlayer></VideoPlayer>
+          <VideoPlayer srcObject={cameraSourceMedia}></VideoPlayer>
           <p>Camera recording {`${isCameraRecording}`}</p>
         </div>
 
         <div className={styles.videoBlock}>
-          <VideoPlayer></VideoPlayer>
+          <VideoPlayer srcObject={screenSourceMedia}></VideoPlayer>
           <p>Screen recording {`${isScreenRecording}`}</p>
         </div>
       </div>
