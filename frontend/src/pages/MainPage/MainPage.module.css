@@ -15,6 +15,13 @@
   padding: 10px;
 }
 
+.title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
 .buttonsContainer {
   display: flex;
   justify-content: center;
