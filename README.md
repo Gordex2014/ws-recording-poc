@@ -14,11 +14,11 @@ Video recording POC using web sockets and Buffer chunks.
 
     Install the dependencies:
 
-    $ npm install
+    $ yarn
 
     Run the server:
 
-    $ npm run start:dev
+    $ yarn start:dev
 
     In a new terminal, go to the frontend folder:
 

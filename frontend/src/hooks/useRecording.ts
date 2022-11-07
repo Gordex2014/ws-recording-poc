@@ -79,6 +79,7 @@ export const useRecording = (mediaType: MediaType, userName: string) => {
       socket?.emit(SocketEvents.STOP_RECORDING, {
         name: userName,
       });
+      setIsRecording(false);
       (sourceMedia as MediaStream)
         ?.getTracks()
         .forEach((track) => track.stop());
